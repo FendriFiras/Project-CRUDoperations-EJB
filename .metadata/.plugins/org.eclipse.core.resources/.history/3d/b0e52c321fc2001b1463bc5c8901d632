@@ -1,0 +1,88 @@
+<%@page import="tn.enis.entity.Product"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1>Ajout un nouveau produit</h1>
+		<form action="ShopServlet" method="GET">
+			<table>
+				<tr>
+					<td>name:</td>
+					<td><input type="text" name="name" required /></td>
+				</tr>
+				<tr>
+					<td>quantity:</td>
+					<td><input type="text" name="quantity" required /></td>
+				</tr>
+				<tr>
+					<td>price:</td>
+					<td><input type="text" name="price" required /></td>
+				</tr>
+			</table>
+			<input class="btn btn-success" type="submit" name="action"
+				value="add" />
+		</form>
+		<hr />
+		<%
+		List<Product> produit = (List<Product>) request.getAttribute("Produit");
+		%>
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">N°</th>
+					<th scope="col">Rib</th>
+					<th scope="col">Solde</th>
+					<th scope="col">Client</th>
+					<th scope="col">Delete</th>
+					<th scope="col">Edit</th>
+
+				</tr>
+			</thead>
+
+			<%
+			if (comptes != null && !comptes.isEmpty()) {
+				int index = 0;
+				for (Compte compte : comptes) {
+					index++;
+			%>
+			<tr id="<%=compte.getRib()%>">
+				<th scope="col"><%=index%></th>
+				<th scope="col"><%=compte.getRib()%></th>
+				<th scope="col"><%=compte.getSolde()%></th>
+				<th scope="col"><%=compte.getClient().getNom()%></th>
+				<th scope="col"><a
+					href="javascript:deleteCompte(<%=compte.getRib()%>)"
+					class="btn btn-danger">Delete</a></th>
+				<th scope="col"><form action="CompteServlet" method="POST">
+						<input type="hidden" name="rib" value="<%=compte.getRib()%>" />
+						<button name="edit" class="btn btn-success">Edit</button>
+					</form></th>
+			</tr>
+
+			<%
+			}
+			}
+			%>
+
+			<script
+				src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+				integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+				crossorigin="anonymous"></script>
+			<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+			<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+			<script src="assets/shop.js"></script>
+	</div>
+</body>
+</html>

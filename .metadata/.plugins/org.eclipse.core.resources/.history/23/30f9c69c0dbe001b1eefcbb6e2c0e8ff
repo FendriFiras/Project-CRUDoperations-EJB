@@ -1,0 +1,20 @@
+package tn.enis.dao;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Singleton;
+
+/**
+ * Session Bean implementation class CompteDao
+ */
+@Singleton
+@LocalBean
+public class CompteDao {
+
+    /**
+     * Default constructor. 
+     */
+    public CompteDao() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

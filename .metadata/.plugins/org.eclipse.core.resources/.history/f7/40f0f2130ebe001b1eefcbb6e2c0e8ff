@@ -1,0 +1,45 @@
+package tn.enis.dao;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Singleton;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import tn.enis.entity.Compte;
+
+/**
+ * Session Bean implementation class CompteDao
+ */
+@Singleton
+@LocalBean
+public class CompteDao {
+
+	@PersistenceContext
+	private EntityManager em;
+
+	public void save(Compte compte) {
+			em.persist(compt);
+	}
+
+	public void delete(Compte compte) {
+
+	}
+
+	public void update(Compte compte) {
+
+	}
+
+	public void getById(Compte compte) {
+
+	}
+
+	public List<Compte> getAll() {
+	}
+
+	}
+
+	public void save(Compte compte) {
+
+	}
+
+}

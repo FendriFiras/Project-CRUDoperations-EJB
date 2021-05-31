@@ -1,0 +1,20 @@
+package tn.enis.service;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class CompteServices
+ */
+@Stateless
+@LocalBean
+public class CompteServices {
+
+    /**
+     * Default constructor. 
+     */
+    public CompteServices() {
+        // TODO Auto-generated constructor stub
+    }
+
+}

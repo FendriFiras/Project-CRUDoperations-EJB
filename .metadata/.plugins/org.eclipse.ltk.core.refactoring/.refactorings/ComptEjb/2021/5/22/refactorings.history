@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;tn.enis.entity.Compt.java&apos; to &apos;Compte.java&apos;&#x0D;&#x0A;- Original project: &apos;ComptEjb&apos;&#x0D;&#x0A;- Original element: &apos;tn.enis.entity.Compt.java&apos;&#x0D;&#x0A;- Renamed element: &apos;tn.enis.entity.Compte.java&apos;" description="Rename compilation unit &apos;Compt.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/ejbModule&lt;tn.enis.entity{Compt.java" name="Compte.java" references="false" stamp="1622024285411" version="1.0"/>
+</session>

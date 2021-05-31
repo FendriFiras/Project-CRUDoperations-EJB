@@ -1,0 +1,39 @@
+package tn.enis.dao;
+
+import java.util.List;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Singleton;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import tn.enis.entity.Compte;
+import tn.enis.entity.Product;
+
+@Singleton
+@LocalBean
+public class ProductDto {
+	@PersistenceContext
+	private EntityManager em;
+
+	public void save(Product product) {
+		em.persist(product);
+	}
+
+	public void delete(Product product) {
+		em.remove(product);
+	}
+
+	public void update(Product product) {
+		em.merge(product);
+	}
+
+	public Product getById(Long id) {
+		return em.find(Product.class, id);
+	}
+
+	public List<Compte> getAll() {
+		return em.createQuery("from Compte", Product.class).getResultList();
+	}
+
+}

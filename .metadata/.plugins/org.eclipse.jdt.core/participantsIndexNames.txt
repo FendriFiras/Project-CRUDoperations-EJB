@@ -1,0 +1,11 @@
+INDEX VERSION 1.131
+D:\tpEjb\workspace-gi1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3830864393.index
+\CalcWeb\src
+D:\tpEjb\workspace-gi1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1343999509.index
+\ComptWeb\src
+D:\tpEjb\workspace-gi1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1028101820.index
+\GestionCompteWeb\src
+D:\tpEjb\workspace-gi1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2580730755.index
+\CalcWeb\src
+D:\tpEjb\workspace-gi1\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3646087079.index
+\ComptWeb\src

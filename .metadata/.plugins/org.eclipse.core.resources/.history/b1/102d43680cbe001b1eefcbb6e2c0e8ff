@@ -1,0 +1,26 @@
+package tn.enis.entity;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Compte implements Serializable {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long rib;
+	private String client;
+	private float solde;
+	public Compte() {
+		super();
+	}
+	public compt(String client,float sode)
+	
+
+	private static final long serialVersionUID = 1L;
+
+}

@@ -1,0 +1,71 @@
+package tn.enis.control;
+
+import java.io.IOException;
+
+import javax.ejb.EJB;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import tn.enis.entity.Product;
+import tn.enis.service.ShopService;
+
+/**
+ * Servlet implementation class ShopServlet
+ */
+@WebServlet("/ShopServlet")
+public class ShopServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	@EJB
+	private ShopService shopService;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		if ("add".equals(request.getParameter("action"))) {
+			String name = request.getParameter("name");
+			int quantity = Integer.parseInt(request.getParameter("quantity"));
+			float price = Float.parseFloat(request.getParameter("price"));
+			Product prod = new Product(name, quantity, price);
+			shopService.save(prod);
+			response.getWriter().append("success");
+			/*
+			request.getRequestDispatcher("Shop.jsp").forward(request, response);
+			*/
+
+		}
+		/*
+		if (request.getParameter("index") != null) {
+			shopService.delete(Integer.parseInt(request.getParameter("index")));
+			response.getWriter().print(shopService.pTotal());
+			return;
+		}
+
+		if (request.getParameter("edit") != null) {
+			request.setAttribute("editItem", shopService.item(Integer.parseInt(request.getParameter("edit"))));
+			request.setAttribute("indexItem", (request.getParameter("edit")));
+			request.getRequestDispatcher("editItem.jsp").forward(request, response);
+		}
+		if ("edit".equals(request.getParameter("action"))) {
+			String name = request.getParameter("name");
+			int quantity = Integer.parseInt(request.getParameter("quantity"));
+			float price = Float.parseFloat(request.getParameter("price"));
+			int index = Integer.parseInt(request.getParameter("objItem"));
+			shopService.editItem(index, name, quantity, price);
+
+			request.setAttribute("total", shopService.pTotal());
+			request.setAttribute("products", shopService.listProduits());
+			request.getRequestDispatcher("Shop.jsp").forward(request, response);
+
+		}
+		*/
+
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

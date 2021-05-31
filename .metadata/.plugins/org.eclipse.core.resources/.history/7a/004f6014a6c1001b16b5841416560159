@@ -1,0 +1,35 @@
+package tn.enis.service;
+
+import javax.ejb.EJB;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+import tn.enis.dao.ProductDao;
+import tn.enis.entity.Compte;
+
+/**
+ * Session Bean implementation class ShopService
+ */
+@Stateless
+@LocalBean
+public class ShopService {
+	@EJB
+	private ProductDao compteDao;
+
+	public void save(Compte compte) {
+		compteDao.save(compte);
+	}
+
+	public void delete(Compte compte) {
+		compteDao.delete(compte);
+	}
+
+	public void update(Compte compte) {
+		compteDao.update(compte);
+	}
+
+	public Compte getById(Long rib) {
+		return compteDao.getById(rib);
+	}
+
+}
