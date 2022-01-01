@@ -3,7 +3,7 @@
 <table>
 <tr>
 <td>
- Simple web applicatoin with CRUD fonctinality developed with EJB framework
+ Simple web application with CRUD functionality developed with EJB framework
 </td>
 </tr>
 </table>
